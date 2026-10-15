@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  ::selection {
+    background: rgba(99, 102, 241, 0.35);
+  }
+  /* Thin, dark scrollbars that match the surfaces. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.14) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.22);
+    background-clip: content-box;
+  }
+  /* Visible, consistent keyboard focus. */
+  :focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Tabular figures for data-dense numbers. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-line bg-surface shadow-card;
+  }
+  .hairline {
+    @apply border-line;
+  }
+}
+
+/* JSON syntax highlighting tokens (used by the diff inspector). */
+.tok-key {
+  color: #a5b4fc;
+}
+.tok-string {
+  color: #6ee7b7;
+}
+.tok-number {
+  color: #fbbf24;
+}
+.tok-boolean {
+  color: #f0abfc;
+}
+.tok-null {
+  color: #94a3b8;
+  font-style: italic;
+}
+.tok-punct {
+  color: #64748b;
+}
+
+/* Respect reduced-motion preferences globally. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

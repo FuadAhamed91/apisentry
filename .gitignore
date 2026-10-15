@@ -1,0 +1,35 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+backend/.venv/
+venv/
+.venv/
+
+# --- Node / Next.js ---
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env.local
+
+# --- Logs & generated artifacts ---
+*.log
+install.log
+reports/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
